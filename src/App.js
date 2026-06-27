@@ -1,5 +1,4 @@
 import { useState,useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -23,7 +22,7 @@ function App() {
   const [cartItems,setCartItems]=useState([]);
   console.log(cartItems);
   const addTocart=(artwork)=>{
-    if(artwork.availability==false){
+    if(artwork.availability===false){
       alert("This artwork is sold and cannot be added to the cart.");
       return;
     }
