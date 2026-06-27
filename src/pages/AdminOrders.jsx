@@ -7,7 +7,7 @@ function AdminOrders(){
     const [artworks, setArtworks] = useState([]);
     const deleteOrder=async(id)=>{
         try{
-        await axios.delete(`http://localhost:5000/customorders/${id}`);
+        await axios.delete(`http://localhost:5000/customorders/${id}`)
         setOrders(
             orders.filter((order)=>order._id!===id)
         );
