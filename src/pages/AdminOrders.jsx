@@ -9,7 +9,7 @@ function AdminOrders(){
         try{
         await axios.delete(`http://localhost:5000/customorders/${id}`);
         setOrders(
-            orders.filter((order)=>order._id!==id)
+            orders.filter((order)=>order._id!===id)
         );
         alert("Order deleted successfully")
     }
@@ -25,7 +25,7 @@ function AdminOrders(){
     );
     setPaintingOrders(
       paintingOrders.filter(
-        (order) => order._id !== id
+        (order) => order._id !=== id
       )
     );
     alert("Painting order deleted successfully");
