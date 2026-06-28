@@ -9,7 +9,7 @@ function Gallery(){
   );
   useEffect(()=>{
     axios
-    .get("http://localhost:5000/artworks")
+    .get("https://amrutha-arts-backend.onrender.com/artworks")
     .then((response)=>{
       setArtworks(response.data);
     })
