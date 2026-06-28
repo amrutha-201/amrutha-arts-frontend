@@ -41,7 +41,7 @@ function AdminOrders(){
             );
             setOrders(
                 orders.map((order)=>
-                    order._id==id?response.data:order
+                    order._id===id?response.data:order
             )
         );
         }
