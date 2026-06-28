@@ -7,7 +7,7 @@ function AdminOrders(){
     const [artworks, setArtworks] = useState([]);
     const deleteOrder=async(id)=>{
         try{
-        await axios.delete(`http://localhost:5000/customorders/${id}`)
+        await axios.delete(`https://amrutha-arts-backend.onrender.com/customorders/${id}`)
         setOrders(
             orders.filter((order)=>order._id!==id)
         );
@@ -21,7 +21,7 @@ function AdminOrders(){
     const deletePaintingOrder = async (id) => {
     try {
     await axios.delete(
-      `http://localhost:5000/paintingorders/${id}`
+      `https://amrutha-arts-backend.onrender.com/paintingorders/${id}`
     );
     setPaintingOrders(
       paintingOrders.filter(
@@ -37,7 +37,7 @@ function AdminOrders(){
     const UpdateStatus=async(id,status)=>{
         try{
             const response=await axios.put(
-                `http://localhost:5000/customorders/${id}`,
+                `https://amrutha-arts-backend.onrender.com/customorders/${id}`,
                 {status}
             );
             setOrders(
@@ -54,7 +54,7 @@ function AdminOrders(){
     const updatePaintingStatus = async (id, status) => {
     try {
     const response = await axios.put(
-      `http://localhost:5000/paintingorders/${id}`,
+      `https://amrutha-arts-backend.onrender.com/paintingorders/${id}`,
       { status }
     );
     setPaintingOrders(
@@ -70,7 +70,7 @@ function AdminOrders(){
     const updateAvailability = async (id, availability) => {
     try {
     const response = await axios.put(
-      `http://localhost:5000/artworks/${id}`,
+      `https://amrutha-arts-backend.onrender.com/artworks/${id}`,
       { availability }
     );
     setArtworks(
@@ -86,7 +86,7 @@ function AdminOrders(){
     };
     useEffect(()=>{
         axios
-        .get('http://localhost:5000/customorders')
+        .get('https://amrutha-arts-backend.onrender.com/customorders')
         .then((response)=>{
             setOrders(response.data)
         })
@@ -94,14 +94,14 @@ function AdminOrders(){
             console.log(error);
         });
         axios
-        .get("http://localhost:5000/paintingorders")
+        .get("https://amrutha-arts-backend.onrender.com/paintingorders")
         .then((response)=>{
             setPaintingOrders(response.data);
         })
         .catch((error)=>{
             console.log(error);
         });
-        axios.get("http://localhost:5000/artworks")
+        axios.get("https://amrutha-arts-backend.onrender.com/artworks")
         .then((response) => {
         setArtworks(response.data);
         });
@@ -134,7 +134,7 @@ function AdminOrders(){
                         Specifications:{order.specifications}
                     </p>
                     <img
-                        src={`http://localhost:5000/uploads/${order.photo}`}
+                        src={`https://amrutha-arts-backend.onrender.com/uploads/${order.photo}`}
                         alt="Reference"
                         style={{
                             width:"250px",
