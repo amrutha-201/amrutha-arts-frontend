@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from'react';
+import {navigate} from "react-router-dom";
 import axios from'axios';
 function AdminOrders(){
     const[orders,setOrders]=useState([]);
