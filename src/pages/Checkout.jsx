@@ -8,7 +8,7 @@ function Checkout({cartItems,setCartItems}){
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:5000/paintingorders",
+            await axios.post("https://amrutha-arts-backend.onrender.com/paintingorders",
             {
                 customerName:name,
                 email,
